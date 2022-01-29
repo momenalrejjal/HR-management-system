@@ -5,17 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app.js"></script>
+    <script src="./app2.js" defer></script>
+    //<script src="./app.js" defer></script>
     <title>Document</title>
 </head>
 <header>
+    <div id="head">
+    </div>
    
 </header>
 <body>
     <main>
-        
+        <button id="btn">click me!</button>
+        <form id="form"> 
+            <label for="name">Full name</label>
+            <input id="in1" type="text" name="in1" required><br>
+            <label for="department">choose a Department:</label>
+            <select id="dep" name="department">
+                <option value="Administration">Administration</option>
+                <option value="Marketing">Marketing</option>
+                <option value="Development">Development</option>
+                <option value="Finance">Finance</option>
+            </select><br>
+            <label for="level" name="level">choose a Level:</label>
+            <select id="lev" name="level">
+                <option value="junior">junior</option>
+                <option value="mid-senior">mid-senior</option>
+                <option value="senior">senior</option>
+            </select><br>
+            <label for="image" name="imageurl">imageurl</label>
+            <input id="img" type="url" name="image" ><br>
+            <label id="empid" for="empid" type="text" name="employeeid">employee id:</label>
+
+            <script>
+                function uniqueid(){
+    let id =Math.floor(Math.random()*(9999 - 1000+1)+1000);
+    let text = document.getElementById("txtid")
+    text.value=id;}
+            </script>
+            <input type="text" name="txt" id="txtid" />
+            <input type="button" name="sub" id="btnsubmit" onclick="uniqueid()" value="Submit" /><br>
+            <input id="sub" type="submit" name="submit">
+
+        </form>
+
     </main>
-    
+   
 </body>
 <footer>
     <p > &copy; all rights is saved</p>

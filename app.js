@@ -4,6 +4,8 @@ let department = ["administration" ,"marketing" ,"development" ,"finance"];
 //let level = ["junior" ,"mid-senior" ,"senior"];
 let salary = [2000 ,1500 ,1000 ,500];
 
+let form = document.getElementById("form");
+
 function Employee(employeeid ,fullname ,department ,junior ,midsenior , senior, imageurl ){
     this.employeeid = employeeid;
     this.fullname = fullname;
@@ -55,3 +57,16 @@ for(let i=0 ; i<allEmployee.length ; i++){
     console.log(allEmployee[i]);
     allEmployee[i].render();
     };
+
+    form.addEventListener("submit",handlesubmit)
+    function handlesubmit(event){
+        event.preventDefault();
+        let txtid = event.target.txtid.value;
+        let in1 = event.target.in1.value;
+        let department = event.target.department.value;
+        let level = event.target.level.value;
+        let image = event.target.image.value;
+        let newemp = new Employee(txtid ,in1 ,department ,level ,image);
+        newemp.ransalary();
+        newemp.render();
+    }
